@@ -1,3 +1,4 @@
+// main.jsx
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from "@propelauth/react";
@@ -11,9 +12,9 @@ const authUrl = "https://166792692.propelauthtest.com";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <AuthProvider authUrl={authUrl}>
-      <App />
-    </AuthProvider>
+      <AuthProvider authUrl={authUrl}>
+        <App />
+      </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
 );

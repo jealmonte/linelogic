@@ -1,0 +1,13 @@
+/* LandingPage.css */
+html, body {
+    margin: 0; /* Remove default margin */
+    height: 100%; /* Ensure body takes full height */
+}
+
+.w-full {
+    scroll-snap-type: y mandatory; /* Set snap type */
+}
+
+.h-screen {
+    scroll-snap-align: start; /* Ensure sections snap correctly */
+}
