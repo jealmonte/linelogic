@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import React from 'react';
+import './App.css';
+import LandingPage from './components/LandingPage';
+import Dashboard from './components/Dashboard';
+import Evaluation from './components/Evaluation';
+import Results from './components/Results'; // Import the Results component
+import { withAuthInfo } from "@propelauth/react";
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function App({ isLoggedIn, user }) {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div id="root">
+      <Routes>
+        <Route path="/" element={isLoggedIn ? <Navigate to="/dashboard" /> : <LandingPage />} />
+        <Route path="/dashboard" element={isLoggedIn ? <Dashboard user={user} /> : <Navigate to="/" />} />
+        <Route path="/evaluation" element={isLoggedIn ? <Evaluation /> : <Navigate to="/" />} />
+        <Route path="/results" element={isLoggedIn ? <Results /> : <Navigate to="/" />} /> // Add a new Route for the Results component
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default withAuthInfo(App);
