@@ -111,7 +111,7 @@ body, html {
   height: 80px;  /* Adjust the height */
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-end;  /* Align items to the right */
+  justify-content: space-between;  /* Align items to the right */
   z-index: 1000;  /* Ensure it's on top */
 }
 
@@ -205,15 +205,15 @@ body, html {
 }
 
 .menu .item:hover .link {
-  color: #CF4420; /* Orange color */
-  background-color: #CF4420; /* Orange background */
+  color: #a52752; 
+  background-color: #a52752;
   border-radius: 16px 16px 0 0;
 }
 
 .menu .item:hover .link::after {
   transform: scaleX(1);
   transform-origin: right;
-  background-color: #CF4420; /* Orange background */
+  background-color: #a52752; /* Orange background */
 }
 
 .menu .item:hover .link svg {
@@ -231,7 +231,7 @@ body, html {
 }
 
 .submenu .submenu-item:hover {
-  background-color: #CF4420; /* Orange background */
+  background-color: #a52752; /* Orange background */
 }
 
 .submenu .submenu-item:hover .submenu-link {
@@ -285,7 +285,7 @@ button {
 }
 
 button:hover {
-  background-color: #ff4500;
+  background-color: #630031;
 }
 
 .info-section {
@@ -362,7 +362,7 @@ footer {
 
 .username-letter:hover {
   transform: translateY(-25px);
-  color: #CF4420;
+  color: #a52752;
 }
 
 @keyframes bounce {
@@ -392,7 +392,7 @@ footer {
   position: absolute; /* Position absolutely */
   top: 0.3rem; /* Set top margin */
   left: 1.1rem; /* Set left margin */
-  color: #CF4420;
+  color: #a52752;
 }
 
 /* Ensure you have the font available, if not, you can include it using @font-face */
@@ -438,4 +438,14 @@ footer {
   url('roboto.woff') format('woff'), /* Modern Browsers */
   url('roboto.ttf')  format('truetype'), /* Safari, Android, iOS */
   url('roboto.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+.logo {
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Center the logo vertically */
 }

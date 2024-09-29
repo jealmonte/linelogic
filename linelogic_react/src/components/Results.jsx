@@ -5,9 +5,9 @@ import Sidebar from './Sidebar';
 
 function Results() {
   const location = useLocation();
-  const { airportName, currentLocation, tripTime } = location.state || {};
+  const { airportName, currentLocation, tripTime, user } = location.state || {};
 
-  const userName = 'almontejoshua2';
+  const userName = user?.firstName || 'User';
 
   // Ensure tripTime is a valid number, fallback to 0 if not
   const validTripTime = isNaN(Number(tripTime)) ? 0 : Number(tripTime); // Default to 0 if tripTime is invalid
@@ -158,18 +158,19 @@ function Results() {
 
   return (
     <div className="flex h-screen w-full">
+      <TopBar />
       <Sidebar onPlusButtonClick={() => {}} />
       <div className="flex-1 relative p-6 space-y-6 overflow-y-auto ml-[80px] mt-[120px] w-full">
-        <TopBar />
+        
         <div className="flex w-full">
           <div className="w-1/2" style={{ height: '443px' }}>
             <div
               id="map"
-              className="rounded-lg w-full h-full border border-gray-300 mb-6 transition-transform transform hover:scale-105 hover:shadow-lg mt-10"
+              className="rounded-lg w-full h-full border border-gray-300 mb-6 transition-transform transform hover:scale-105 hover:shadow-lg mt-16"
             />
           </div>
 
-          <div className="w-1/2 p-4 space-y-14 mt-6">
+          <div className="w-1/2 p-4 space-y-14 mt-12">
             <div className="bg-gray-800 text-white rounded-lg p-4 shadow-lg w-full transition-transform transform hover:scale-105 hover:shadow-lg">
               <h1 className="text-xl font-bold">
                 Hi&nbsp;

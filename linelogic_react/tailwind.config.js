@@ -15,10 +15,8 @@ export default {
         '128': '6rem',
       },
       colors: {
-        '630031': '#630031',
-        'CF4420': '#CF4420',
         maroon: {
-          300: '#B03060',
+          300: '#B03060',  // Define the custom maroon shade for hover
         },
       },
       width: {
