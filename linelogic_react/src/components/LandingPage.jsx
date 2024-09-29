@@ -61,8 +61,8 @@ const LandingPage = () => {
             {/* Top bar */}
             <div className="fixed top-0 left-0 w-full bg-transparent text-white p-4 z-50 flex items-center">
                 <div className="max-w-7xl mx-auto flex items-center w-full justify-start">
-                    <nav className="flex w-full">
-                        <ul className="flex space-x-8">
+                    <nav className="flex w-full items-center">
+                        <ul className="flex space-x-8 items-center">
                             <li>
                                 <img 
                                     src={logo} 
@@ -73,7 +73,7 @@ const LandingPage = () => {
                             <li>
                                 <button 
                                     onClick={() => handleScroll('section1')} 
-                                    className="hover:text-gray-400 text-xl font-helvetica"
+                                    className="bg-transparent hover:text-gray-400 text-xl font-helvetica mt-2 text-white"
                                 >
                                     Intro
                                 </button>
@@ -81,7 +81,7 @@ const LandingPage = () => {
                             <li>
                                 <button 
                                     onClick={() => handleScroll('section2')} 
-                                    className="hover:text-gray-400 text-xl font-helvetica"
+                                    className="bg-transparent hover:text-gray-400 text-xl font-helvetica mt-2 text-white"
                                 >
                                     Services
                                 </button>
@@ -89,7 +89,7 @@ const LandingPage = () => {
                             <li>
                                 <button 
                                     onClick={() => handleScroll('section3')} 
-                                    className="hover:text-gray-400 text-xl font-helvetica"
+                                    className="bg-transparent hover:text-gray-400 text-xl font-helvetica mt-2 text-white"
                                 >
                                     About
                                 </button>
@@ -97,7 +97,7 @@ const LandingPage = () => {
                             <li>
                                 <button 
                                     onClick={() => handleScroll('section4')} 
-                                    className="hover:text-gray-400 text-xl font-helvetica"
+                                    className="bg-transparent hover:text-gray-400 text-xl font-helvetica mt-2 text-white"
                                 >
                                     Contact
                                 </button>
