@@ -119,7 +119,7 @@ const LandingPage = () => {
                     id="section1"
                     className={`h-screen flex flex-col items-start justify-start text-white transition-opacity duration-500 snap-start z-10 ${section1InView ? 'opacity-100' : 'opacity-50'} pt-64`}
                     >
-                    <h1 className="text-7xl font-helvetica-bold">Welcome to <br />linelogic.</h1>
+                    <h1 className="text-7xl font-helvetica-bold">Welcome to <br />lineLogic.</h1>
                     <h2 className="mt-4 text-xl max-w-xl font-helvetica">
                         Your smart pass through TSA—no more guessing, just go. Use our advanced AI to predict security line wait times at airports.
                     </h2>
@@ -184,7 +184,7 @@ const LandingPage = () => {
                                 Discover the ultimate convenience of live <br /> line-time estimations.
                             </h2>
                             <p className="relative z-20 max-w-4xl font-helvetica mt-10" style={{ fontSize: '20pt', lineHeight: '1.4' }}>
-                                linelogic uses cutting-edge AI technology to analyze and predict TSA security line wait times, helping travelers plan their airport arrivals more efficiently. Due to current security constraints, sample analysis footage is drone footage from VTHax 12.
+                                lineLogic uses cutting-edge AI technology to analyze and predict TSA security line wait times, helping travelers plan their airport arrivals more efficiently. Due to current security constraints, sample analysis footage is drone footage from VTHax 12.
                             </p>
 
                             {/* Plane Image */}
