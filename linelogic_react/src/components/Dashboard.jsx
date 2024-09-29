@@ -1,12 +1,12 @@
-// Dashboard.jsx
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TopBar from './TopBar';
 import Sidebar from './Sidebar';
+import planeVideo from '../assets/plane-video.webm';
 
 function Dashboard({ user }) {
   const navigate = useNavigate();
-  const username = user.email.split('@')[0];
+  const firstName = user.firstName; // Extract the first name
   const airportInputRef = useRef(null); // Reference for the airport input
   const locationInputRef = useRef(null); // Reference for the current location input
 
@@ -24,6 +24,7 @@ function Dashboard({ user }) {
       state: {
         airportName,
         currentLocation,
+        user,
       },
     });
   };
@@ -73,40 +74,57 @@ function Dashboard({ user }) {
     <>
       <TopBar />
       <Sidebar onPlusButtonClick={handlePlusButtonClick} />
-      <div className="main-content">
-        <h1>
-          <div className="greeting font-bold">
-            Hi&nbsp;
-            {username.split('').map((letter, index) => (
-              <span key={index} className="username-letter">
-                {letter}
-              </span>
-            ))}
-            ,
+      <div className="relative main-content w-full h-full">
+        {/* Plane Video - Adjust positioning */}
+        <div className="absolute left-1/3 top-20 z-20">
+          <video 
+            className="max-h-108 object-cover z-10"
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+          >
+            <source src={planeVideo} type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-30 p-8">
+          <h1>
+            <div className="greeting font-bold">
+              Hi&nbsp;
+              {firstName.split('').map((letter, index) => (
+                <span key={index} className="username-letter">
+                  {letter}
+                </span>
+              ))}
+              ,
+            </div>
+          </h1>
+          <p>Estimate your security time by entering your flight info here:</p>
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="Enter your airport name"
+              className="input-field"
+              ref={airportInputRef}
+            />
+            <input
+              type="text"
+              placeholder="Enter your current location"
+              className="input-field"
+              ref={locationInputRef}
+            />
+            <input
+              type="text"
+              placeholder="Enter your gate number"
+              className="input-field"
+            />
+            <button className="calculate-button" onClick={handleCalculateClick}>
+              Calculate
+            </button>
           </div>
-        </h1>
-        <p>Estimate your security time by entering your flight info here:</p>
-        <div className="input-container">
-          <input
-            type="text"
-            placeholder="Enter your airport name"
-            className="input-field"
-            ref={airportInputRef}
-          />
-          <input
-            type="text"
-            placeholder="Enter your current location"
-            className="input-field"
-            ref={locationInputRef}
-          />
-          <input
-            type="text"
-            placeholder="Enter your gate number"
-            className="input-field"
-          />
-          <button className="calculate-button" onClick={handleCalculateClick}>
-            Calculate
-          </button>
         </div>
       </div>
     </>

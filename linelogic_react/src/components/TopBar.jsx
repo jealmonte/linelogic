@@ -1,6 +1,7 @@
 // components/TopBar.jsx
 import React from 'react';
 import { useLogoutFunction } from "@propelauth/react";
+import LLLogo from '../assets/LL-colored.png'; 
 
 const TopBar = () => {
     const logout = useLogoutFunction(); // Get the logout function
@@ -12,7 +13,9 @@ const TopBar = () => {
 
   return (
   <div className="top-bar">
-    <div className="waitless-logo">waitless</div>
+    <div className="logo-container"> {/* Added a container for styling if needed */}
+    <img src={LLLogo} alt="LineLogic Logo" className="logo" /> {/* Logo image */}
+    </div>
     <div className="top-bar-container">
       <div className="menu">
         <div className="item">
