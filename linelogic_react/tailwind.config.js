@@ -1,13 +1,25 @@
 // tailwind.config.js
 export default {
+  safelist: [
+    'hover:bg-maroon-300'
+  ],
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: { 
     extend: {
+      fontFamily: {
+        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+      },
+      spacing: {
+        '128': '6rem',
+      },
       colors: {
         '630031': '#630031',
         'CF4420': '#CF4420',
+        maroon: {
+          300: '#B03060',
+        },
       },
       width: {
         '30': '5rem',
