@@ -148,7 +148,7 @@ function Results() {
     if (randomValues.length > 0) {
       // Calculate average time of all videos in minutes
       const averageTime = randomValues.reduce((sum, value) => sum + (parseFloat(value.time) / 60), 0) / randomValues.length; // Average time in minutes
-      const securityCheckTime = (averageTime * 3).toFixed(2); // Multiply average by 3 and convert to string
+      const securityCheckTime = (averageTime * 6).toFixed(2); // Multiply average by 3 and convert to string
       setLiveUpdates(prev => ({
         ...prev,
         'Security Check': `${securityCheckTime} minutes`, // Update Security Check time
