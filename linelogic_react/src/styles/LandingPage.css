@@ -22,3 +22,71 @@ html, body {
 .font-helvetica-bold {
     font-weight: bold; /* Ensure bold style is applied */
 }
+
+.service-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, margin-left 0.3s ease-in-out;
+    margin-left: 0;
+  }
+  
+  .service-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .service-item:hover {
+    margin-left: 1.5rem;
+  }
+
+  @keyframes moveCloud {
+    0% {
+      transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+      transform: translate3d(100vw, 0, 0);
+    }
+  }
+  
+  @keyframes moveCloudBottom {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .cloud {
+  position: absolute;
+  top: -140px;
+  left: -100%;
+  width: auto;
+  height: 400px;
+  opacity: 20%;
+  animation: moveCloud 60s linear infinite;
+  animation-delay: -60s;
+  z-index: 1;
+  will-change: transform;
+}
+
+.cloud-bottom {
+  position: absolute;
+  bottom: -80px;
+  left: -100%;
+  width: 200%;
+  height: auto;
+  opacity: 40%;
+  animation: moveCloudBottom 60s linear infinite;
+  animation-delay: -60s;
+  z-index: 1;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .cloud, .cloud-bottom {
+      animation-duration: 65s;
+      animation-delay: -65s;
+    }
+  }
+  
