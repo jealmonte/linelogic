@@ -1,0 +1,39 @@
+.evaluation-container {
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Adjust width as needed */
+  }
+  
+  .video {
+    width: auto;
+    height: 100px; /* Set a fixed height for the videos */
+    object-fit: cover; /* Ensure the video fits nicely without distortion */
+  }
+  
+  .chart-container {
+    width: 50%; /* Adjust width as needed */
+    flex-grow: 1; /* Fill remaining space */
+    margin-bottom: 0.5rem; /* Space between chart and text box */
+  }
+  
+  .elapsed-times {
+    animation: scroll 10s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  

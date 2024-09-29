@@ -19,8 +19,8 @@ function Dashboard({ user }) {
     const airportName = airportInputRef.current.value;
     const currentLocation = locationInputRef.current.value;
 
-    // Navigate to Results page with the input values
-    navigate('/results', {
+    // Navigate to Evaluation page with the input values
+    navigate('/evaluation', {
       state: {
         airportName,
         currentLocation,
@@ -98,8 +98,7 @@ function Dashboard({ user }) {
                 <span key={index} className="username-letter">
                   {letter}
                 </span>
-              ))}
-              ,
+              ))}, 
             </div>
           </h1>
           <p>Estimate your security time by entering your flight info here:</p>
